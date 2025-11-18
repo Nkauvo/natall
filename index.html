@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎅 Especial de Natal Mágico 🎅</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícone de aba (Favicon) opcional -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+  </head>
+  <body class="natal-dark-theme">  <!-- Classe para tema escuro natalino -->
+    
+  <!-- Canvas para o efeito de neve -->
+  <canvas id="particles-canvas"></canvas>
+    
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <!-- Título Principal -->
+          <h1 class="main-title" id="main-title">NATAL MÁGICO 🎅</h1>
+          
+          <!-- Subtítulo Temático -->
+          <p class="subtitle" id="subtitle">Presentes que encantam com descontos de até 70%</p>
+          
+          <!-- Contador -->
+          <div class="countdown-container">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">00</span>
+              <span class="countdown-label">Dias</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">00</span>
+              <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">00</span>
+              <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">00</span>
+              <span class="countdown-label">Segundos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section">
+        <!-- Título da Vitrine -->
+        <h2 class="products-title">🎄 A Fábrica de Presentes 🎄</h2>
+        
+        <!-- Grade de Produtos -->
+        <div class="products-grid"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+    window.__SUPABASE = window.__SUPABASE || {
+        url: window.SUPABASE_URL || 'https://wfmmfignyjuzlmbriswo.supabase.co',
+        anonKey: window.SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndmbW1maWdueWp1emxtYnJpc3dvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0NTM0MDUsImV4cCI6MjA3OTAyOTQwNX0.9AvIzc2efaEg8vNtoJ4hOMEHuaezmpO19bgWI2UtmpU'
+    };
+    </script>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

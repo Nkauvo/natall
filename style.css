@@ -1,0 +1,310 @@
+/*
+  Folha de estilos principal do projeto - TEMA: NATAL MÁGICO COM FUNDO ESCURO 🎅🎄
+  Fundo escuro para destacar neve, paleta natalina adaptada.
+*/
+
+:root {
+  --red-christmas: #c0392b;
+  --green-pine: #27ae60;
+  --green-dark: #1e8449;
+  --gold-star: #f1c40f;
+  --dark-bg: #2c3e50;  /* Azul-marinho escuro */
+  --darker-bg: #34495e;  /* Cinza-azul escuro */
+  --snow-white: #ffffff;  /* Branco para textos */
+  --text-dark: #ecf0f1;  /* Texto claro para contraste */
+  --card-shadow: rgba(241, 196, 15, 0.3);  /* Sombra dourada */
+}
+
+body.natal-dark-theme {
+  background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);  /* Fundo escuro natalino */
+  color: var(--text-dark);  /* Texto claro */
+}
+
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#particles-canvas {
+  /* Canvas para neve - agora destaca no fundo escuro */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- SEÇÃO HERO --- */
+
+.hero-section {
+  position: relative;
+  min-height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  background: transparent;  /* Fundo escuro do body aparece */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+}
+
+.main-title {
+  font-family: 'Georgia', serif;
+  font-size: 72px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  letter-spacing: 4px;
+  color: var(--gold-star);  /* Dourado para brilho */
+  text-shadow: 2px 2px 0px var(--red-christmas), 0 0 20px var(--gold-star);  /* Brilho mágico */
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.subtitle {
+  font-size: 24px;
+  margin: 0 0 40px 0;
+  color: var(--snow-white);  /* Branco para destaque */
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* --- CONTADOR --- */
+
+.countdown-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparente para fundo escuro */
+  border: 2px solid var(--gold-star);  /* Borda dourada */
+  border-radius: 12px;
+  padding: 20px 30px;
+  min-width: 120px;
+  box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.countdown-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--snow-white);
+  display: block;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  color: var(--green-pine);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* --- SEÇÃO DE PRODUTOS --- */
+
+.products-section {
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px;
+  background: transparent;
+}
+
+.products-title {
+  text-align: center;
+  font-size: 42px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin: 0 0 50px 0;
+  color: var(--gold-star);  /* Dourado */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid var(--red-christmas);
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.1);  /* Semi-transparente */
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--gold-star);  /* Borda dourada */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--card-shadow);
+  border-color: var(--red-christmas);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  position: relative;
+}
+
+.product-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--red-christmas),
+    var(--red-christmas) 10px,
+    var(--gold-star) 10px,
+    var(--gold-star) 20px
+  );
+}
+
+.discount-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--gold-star);
+  color: var(--dark-bg);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(241, 196, 15, 0.5);
+}
+
+.product-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  color: var(--snow-white);
+  min-height: 55px;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.old-price {
+  font-size: 16px;
+  text-decoration: line-through;
+  color: #bdc3c7;
+}
+
+.new-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--gold-star);
+}
+
+.buy-button {
+  width: 100%;
+  padding: 15px;
+  background: var(--green-pine);
+  color: var(--snow-white);
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+}
+
+.buy-button:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(39, 174, 96, 0.4);
+}
+
+.buy-button:active {
+  transform: scale(0.98);
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 48px;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .countdown-item {
+    min-width: 90px;
+    padding: 15px;
+  }
+
+  .countdown-number {
+    font-size: 32px;
+  }
+  
+  .product-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 36px;
+  }
+  
+  .products-grid {
+    gap: 20px;
+  }
+  
+  .products-title {
+    font-size: 32px;
+    width: 100%;
+  }
+}
